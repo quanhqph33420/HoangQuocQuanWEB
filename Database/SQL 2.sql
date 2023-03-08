@@ -1,6 +1,0 @@
-CREATE TABLE tbl1(
-col1 INT ,
-col2 FLOAT,
-col3 VARCHAR(20),
-col4 VARCHAR(50)
-);
