@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="trangChu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Trang chủ</title>
+    <style>
+        .nav-bar {
+            display: none;
+            cursor: pointer;
+        }
+
+        .change .bar1 {
+            transform: rotate(45deg) translate(0, 11px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            transform: rotate(-45deg) translate(0, -11px);
+        }
+
+       
+
+    </style>
+    <link rel="stylesheet" href="responsive.css">
+
 </head>
+
 <body>
-    
+    <div class="wrapper">
+        <div class="header">
+            <img src="image/logo.jpg" alt="logo">
+            
+            <div class="menu">
+                <ul>
+                    <li><a href="trangChu.html">Trang chủ</a></li>
+                    <li><a href="page2.html">Lịch chiếu</a></li>
+                    <li><a href="Contact.html">Liên hệ</a></li>
+                </ul>
+
+                <div class="nav-bar">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fa fa-search" style="transform: rotate(90deg);"></i></button>
+            </div>
+        </div>
+        <!-- <div class="banner">
+            <img src="image/banner.jpg" alt="">
+            <img src="image/banner1.jpg" alt="">
+            <img src="image/banner2.jpg" alt="">
+            <img src="image/banner3.jpg" alt="">
+            <img src="image/banner4.jpg" alt="">
+        </div> -->
+    </div>
 </body>
+<script>
+    var images = document.querySelectorAll('.banner img');
+    const bar = document.querySelector('.nav-bar');
+    var change = document.getElementsByClassName('change');
+    var index = 0;
+
+    function changeImage() {
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.display = 'none';
+        }
+        index = (index + 1) % images.length;
+        images[index].style.display = 'block';
+        setTimeout(changeImage, 1000); // Đợi 1 giây rồi hiển thị ảnh tiếp theo
+    }
+    function changeBar() {
+        bar.addEventListener('click', function () {
+            bar.classList.toggle('change');
+        });
+    }
+    // changeImage();
+    changeBar();
+</script>
+
 </html>

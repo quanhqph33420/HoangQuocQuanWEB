@@ -1,0 +1,33 @@
+@media screen and (max-width:768px) {
+    .nav-bar {
+        display: block;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        position: fixed;
+        left: 40%;
+    }
+
+    .menu li {
+        margin-top: 20px;
+    }
+    .search {
+        position: fixed;
+        top: 25px;
+        right: 0;
+    }
+
+    .nav-bar {
+        position: fixed;
+        top: 25px;
+        right: 150px;
+    }
+
+    .header {
+        justify-content: initial;
+        height: 200px;
+        text-align: center;
+    }
+
+}
