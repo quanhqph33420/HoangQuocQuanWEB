@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="trangChu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Trang chủ</title>
     <style>
         .container {
@@ -17,7 +20,7 @@
         .bar1,
         .bar2,
         .bar3 {
-            width: 35px;
+            width: 30px;
             height: 5px;
             background-color: #333;
             margin: 6px 0;
@@ -68,6 +71,48 @@
                 padding-bottom: 20px;
             }
 
+            /* phần thân */
+            .content-top,
+            .content-bottom {
+                display: grid;
+                grid-template-columns: 30.67% 30.67% 30.67%;
+                grid-template-rows: auto;
+                justify-content: space-between;
+                margin: 0 2.5%;
+            }
+
+            .content-top .imgCol4 {
+                display: none;
+            }
+
+            .content-bottom .imgCol4 {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:480px) {
+            .content-top .imgCol3 {
+                display: none;
+            }
+
+            .content-bottom .imgCol3 {
+                display: none;
+            }
+
+            .content-top,
+            .content-bottom {
+                display: grid;
+                grid-template-columns: 46% 46%;
+                grid-template-rows: auto;
+                justify-content: space-between;
+                margin: 0 2.5%;
+            }
+            .footer{
+                flex-direction: column;
+            }
+            .footer img{
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -104,6 +149,65 @@
             <img src="image/banner2.jpg" alt="">
             <img src="image/banner3.jpg" alt="">
             <img src="image/banner4.jpg" alt="">
+        </div>
+        <div class="main-content">
+            <h2 style="color: #fff;  padding: 50px 2.4%;">MỚI CẬP NHẬT</h2>
+            <div class="content-top">
+                <div class="imgCol1">
+                    <img src="image/banAn.jpg" alt="">
+                    <h3>BẢN ÁN</h3>
+                    <p>Yargi (2021)</p>
+                </div>
+                <div class="imgCol2">
+                    <img src="image/gaHe.jpg" alt="">
+                    <h3>GÃ HỀ</h3>
+                    <p>Joker (2019)</p>
+                </div>
+                <div class="imgCol3">
+                    <img src="image/matTriNho.jpg" alt="">
+                    <h3>MẤT TRÍ NHỚ</h3>
+                    <p>Blackout (2022)</p>
+                </div>
+                <div class="imgCol4">
+                    <img src="image/matTich.jpg" alt="">
+                    <h3>MẤT TÍCH</h3>
+                    <P>Missing (2023)</P>
+                </div>
+            </div>
+            <button type="submit">Xem Thêm</button>
+            <h2 style="color: #fff;  padding: 50px 2.4%;">SẮP CHIẾU</h2>
+            <div class="content-bottom">
+                <div class="imgCol1">
+                    <img class="imgCol1" src="image/tromSach.jpg" alt="">
+                    <h3>KẺ TRỘM SÁCH</h3>
+                    <p>The Book Thief (2014)</p>
+                </div>
+                <div class="imgCol2">
+                    <img class="imgCol2" src="image/tang16.jpg" alt="">
+                    <h3>TẦNG 16</h3>
+                    <p>Level 16 (2018)</p>
+                </div>
+                <div class="imgCol3">
+                    <img class="imgCol3" src="image/PEARL.jpg" alt="">
+                    <h3>PEARL</h3>
+                    <p>Pearl (2022)</p>
+                </div>
+                <div class="imgCol4">
+                    <img class="imgCol4" src="image/blockBuster.jpg" alt="">
+                    <h3>BLOCKBUSTER</h3>
+                    <p>Blockbuster (2022)</p>
+                </div>
+            </div>
+            <button type="submit">Xem Thêm</button>
+        </div>
+        <div class="footer">
+            <img src="image/logo.jpg" alt="">
+            <div>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+            </div>
         </div>
     </div>
 </body>
