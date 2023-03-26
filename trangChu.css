@@ -175,6 +175,7 @@ body {
     background-color: #313030;
     position: relative;
     bottom: -20px;
+    font-size: 20px;
 }
 .footer i:hover{
     opacity: 0.7;
