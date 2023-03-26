@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: 800px;
+        }
+
+        .content img {
+            width: 797px;
+        }
+
+        .content .img2 {
+            display: none;
+        }
+
+        .main-content {
+            border: 2px solid black;
+        }
+
+        @media screen and (max-width:400px) {
+            .content .img1 {
+                display: none;
+            }
+
+            .content .img2 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+
+        </div>
+        <div class="main-content">
+            <div class="content">
+                <img class="img1" src="img/cam.jpg" alt="">
+                <img class="img2" src="img/rau.jpg" alt="">
+                <p>Thay đổi kích thước màn hình để đổi ảnh hiển thị</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
