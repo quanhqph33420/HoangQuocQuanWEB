@@ -1,12 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Lịch chiếu </title>
+        <link rel="shortcut icon" href="image/Calendar.png" type="image/x-icon">
+    <link rel="stylesheet" href="contact.css">
+    <style>
+        .container {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 30px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+            background-color: #fff;
+        }
+
+        .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+    </style>
+    <style>
+        @media screen and (max-width:768px) {
+            .nav-bar {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: rgb(32, 28, 27);
+                width: 100%;
+            }
+
+
+            .menu.responsive {
+                display: block;
+                flex-direction: column;
+                position: static !important;
+                background-color: rgb(32, 28, 27);
+                text-align: center;
+            }
+
+            .menu.responsive li {
+                padding-bottom: 20px;
+            }
+
+        }
+
+        @media screen and (max-width:480px) {
+
+        }
+    </style>
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="header">
+        <a href="trangChu.html">
+            <img src="image/logo.jpg" alt="">
+        </a>
+        <div>
+            <ul class="menu">
+                <li><a target="_blank" href="trangChu.html">Trang chủ</a></li>
+                <li><a target="_blank" href="page2.html">Lịch chiếu</a></li>
+                <li><a target="_blank" href="Contact.html">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="nav-bar">
+            <div class="container">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fa fa-search"
+                    style="transform: rotate(90deg); cursor: pointer;"></i></button>
+        </div>
+    </div>
+    <div class="banner">
+        <img src="image/banner.jpg" alt="">
+        <img src="image/banner1.jpg" alt="">
+        <img src="image/banner2.jpg" alt="">
+        <img src="image/banner3.jpg" alt="">
+        <img src="image/banner4.jpg" alt="">
+    </div>
 </body>
+<script>
+    var images = document.querySelectorAll('.banner img');
+    var index = 0;
+    function changeImage() {
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.display = 'none';
+        }
+        index = (index + 1) % images.length;
+        images[index].style.display = 'block';
+        setTimeout(changeImage, 1000);
+    }
+    changeImage();
+
+    function changeMenu() {
+        var container = document.querySelector('.container');
+        var menu = document.querySelector('.menu');
+
+        container.addEventListener('click', function () {
+            container.classList.toggle('change');
+            menu.classList.toggle('responsive');
+        });
+    }
+
+    changeMenu();
+</script>
+
 </html>
