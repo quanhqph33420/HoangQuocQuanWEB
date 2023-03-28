@@ -11,7 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Lịch chiếu </title>
     <link rel="shortcut icon" href="image/Calendar.png" type="image/x-icon">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="page2.css">
     <style>
         .container {
             display: inline-block;
@@ -72,9 +72,38 @@
                 padding-bottom: 20px;
             }
 
-        }
+            .content-top,
+            .content-bottom {
+                display: grid;
+                grid-template-columns: 40% 40%;
+                grid-template-rows: auto;
+            }
 
-        @media screen and (max-width:576px) {}
+
+
+            @media screen and (max-width:576px) {
+
+                .imgCol1 h3,
+                .imgCol2 h3 {
+                    font-size: 10px;
+                }
+
+                .imgCol1 p,
+                .imgCol2 p {
+                    font-size: 10px;
+
+                }
+
+                .footer {
+                    flex-direction: column;
+                }
+
+                .footer img {
+                    margin: 0 auto;
+                }
+
+            }
+        }
     </style>
     <title>Document</title>
 </head>
@@ -113,10 +142,46 @@
             <img src="image/banner4.jpg" alt="">
         </div>
         <div class="main-content">
+            <h2>SẮP CHIẾU</h2>
+            <label for="">
+                <p>Thời gian: 14/2/2023</p>
+            </label>
             <div class="content-top">
-                <h3>SẮP CHIẾU</h3>
-                <label for="">Thời gian: 14/2/2023</label>
-                
+                <div class="imgCol1">
+                    <img src="image/gacSung.jpg" alt="">
+                    <h3>GÁC SÚNG</h3>
+                    <p>Panzehir (2023)</p>
+                </div>
+                <div class="imgCol2">
+                    <img src="image/giaoSi.jpg" alt="">
+                    <h3>GIÁO SĨ QODRAT</h3>
+                    <p>Qodrat (2023)</p>
+                </div>
+            </div>
+            <h2>SẮP CHIẾU</h2>
+            <label for="">
+                <p>Thời gian: 30/5/2023</p>
+            </label>
+            <div class="content-bottom">
+                <div class="imgCol1">
+                    <img src="image/rambo.jpg" alt="">
+                    <h3>RAMBO 5</h3>
+                    <p>Rambo 5 (2023)</p>
+                </div>
+                <div class="imgCol2">
+                    <img src="image/nhanMa.jpg" alt="">
+                    <h3>NHÂN MÃ</h3>
+                    <p>Centauro (2022)</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <img src="image/logo.jpg" alt="">
+            <div>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
             </div>
         </div>
     </div>
