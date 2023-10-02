@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="image/phone.png" type="image/x-icon">nk
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="contact.css">
+    <style>
+        .container {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 30px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+            background-color: #fff;
+        }
+
+        .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+    </style>
+    <style>
+        @media screen and (max-width:768px) {
+            .nav-bar {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: rgb(32, 28, 27);
+                width: 100%;
+            }
+
+
+            .menu.responsive {
+                display: block;
+                flex-direction: column;
+                position: static !important;
+                background-color: rgb(32, 28, 27);
+                text-align: center;
+            }
+
+            .menu.responsive li {
+                padding-bottom: 20px;
+            }
+
+        }
+
+        @media screen and (max-width:576px) {
+            .footer {
+                flex-direction: column;
+            }
+
+            .footer img {
+                margin: 0 auto;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .main-content .txt {
+                width: 93%;
+            }
+
+            .main-content .area {
+                width: 93%;
+                margin-left: 2.5%;
+            }
+
+            .main-content .txt button {
+                display: none;
+            }
+
+            .main-content .area button {
+                display: block;
+                width: 70%;
+                height: 40px;
+                border-radius: 10px;
+                margin-left: 0;
+                background-color: rgb(77, 77, 207);
+                color: #fff;
+                margin-top: 5px;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <a href="trangChu.html">
+                <img src="image/logo.jpg" alt="">
+            </a>
+            <div>
+                <ul class="menu">
+                    <li><a target="_blank" href="trangChu.html">Trang chủ</a></li>
+                    <li><a target="_blank" href="page2.html">Lịch chiếu</a></li>
+                    <li><a target="_blank" href="Contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="nav-bar">
+                <div class="container">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button type="submit"><i class="fa fa-search"
+                        style="transform: rotate(90deg); cursor: pointer;"></i></button>
+            </div>
+        </div>
+        <h1 style="color: #fff; margin-top: 80px; margin-left: 2.5%; margin-bottom: 10px;">LIÊN HỆ</h1>
+        <div class="map">
+            <iframe class="ggMap"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8639810443356!2d105.74459841485445!3d21.038127785993236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b991d80fd5%3A0x53cefc99d6b0bf6f!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1679976645828!5m2!1svi!2s"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <label for="">
+            <h2>Liên hệ qua Email</h2>
+            <p>Mọi thắc mắc của khách hàng liên hệ với chúng tôi theo form dưới đây</p>
+        </label>
+        <div class="main-content">
+            <form action="" class="txt">
+                <input placeholder="Họ và tên" type="text" name="name">
+                <input placeholder="Email" type="text" name="email">
+                <input placeholder="Số điện thoại" type="text" name="sdt">
+                <input placeholder="Tiêu đề" type="text" name="title">
+                <button type="submit">Gửi cho chúng tôi</button>
+            </form>
+            <form action="" class="area">
+                <textarea name="nd" cols="30" rows="10" placeholder="Nội dung"></textarea>
+                <button type="submit">Gửi cho chúng tôi</button>
+            </form>
+
+        </div>
+        <div class="footer">
+            <img src="image/logo.jpg" alt="">
+            <div>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function changeMenu() {
+        var container = document.querySelector('.container');
+        var menu = document.querySelector('.menu');
+
+        container.addEventListener('click', function () {
+            container.classList.toggle('change');
+            menu.classList.toggle('responsive');
+        });
+    }
+
+    changeMenu();
+</script>
+
+</html>
