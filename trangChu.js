@@ -79,3 +79,31 @@ function downtime(ele, h, m, s) {
         ele.innerHTML = `Phim sẽ chiếu sau: ${h}h: ${m}m: ${s}s`
     }, 1000);
 }
+const ColTopi = document.querySelectorAll(".content-top i")
+const ColTopImg = document.querySelectorAll(".content-top img")
+const ColTopH3 = document.querySelectorAll(".content-top h3")
+
+for (let index = 0; index < ColTopi.length; index++) {
+    ColTopImg[index].addEventListener("mousemove", () => {
+        ColTopi[index].style.display = 'block'
+    })
+    ColTopImg[index].addEventListener("mouseleave", () => {
+        ColTopi[index].style.display = 'none'
+    })
+}
+
+var arrPhim = []
+function phim(anhPhim, tenPhim, namSanXuat) {
+    this.anhPhim = anhPhim
+    this.tenPhim = tenPhim
+    this.namSanXuat = namSanXuat
+}
+
+arrPhim.push(new phim("image/banAn.jpg", "BẢN ÁN", "Yargi (2021)"))
+arrPhim.push(new phim("image/gaHe.jpg", "GÃ HỀ", "Joker (2019)"))
+arrPhim.push(new phim("image/matTriNho.jpg", "MẤT TRÍ NHỚ", "Blackout (2022)"))
+arrPhim.push(new phim("image/matTich.jpg", "MẤT TÍCH", "Missing (2023)"))
+
+for (let index = 0; index < arrPhim.length; index++) {
+    
+}
