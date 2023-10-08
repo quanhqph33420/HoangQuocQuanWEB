@@ -70,11 +70,13 @@ body {
     display: inline;
     margin-left: 10px;
 }
-.dots{
+
+.dots {
     position: absolute;
     bottom: 0;
     right: 44%;
 }
+
 /* menu */
 
 .menu {
@@ -191,6 +193,17 @@ body {
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+.main-content i {
+    margin: 0 0 15px 10px;
+    cursor: pointer;
+}
+
+.content-bottom #downtime {
+    color: #ffffff;
+    margin: 10px;
+
 }
 
 .imgCol1 img:hover,
