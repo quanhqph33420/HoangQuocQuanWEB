@@ -63,7 +63,7 @@ body {
     left: 0;
     background-color: rgb(32, 28, 27);
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 .dots li {
@@ -154,7 +154,6 @@ body {
 }
 
 
-
 .main-content button {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -172,6 +171,7 @@ body {
 .imgCol3,
 .imgCol4 {
     border: 2px solid #fff;
+    position: relative;
 }
 
 .imgCol1 h3,
@@ -203,7 +203,6 @@ body {
 .content-bottom #downtime {
     color: #ffffff;
     margin: 10px;
-
 }
 
 .imgCol1 img:hover,
@@ -214,8 +213,25 @@ body {
     opacity: 0.5;
 }
 
+#icon_hover_col1 {
+    background-color: #1e1a1a;
+    width: 35%;
+    position: absolute;
+    padding-top: 7px;
+    border-radius: 20px;
+    top: 45%;
+    opacity: 60%;
+    left: 30%;
+    display: none;
+    z-index: 2;
+}
+
 .main-content button:hover {
     background-color: rgb(17, 210, 17);
+}
+
+.div-tt{
+    display: none;
 }
 
 .footer {
@@ -244,4 +260,23 @@ body {
 
 .footer i:hover {
     opacity: 0.7;
+}
+
+#tableFavor img {
+    width: 100px;
+}
+
+#tableFavor {
+    text-align: center;
+    color: #ffffff;
+}
+
+#tableFavor th {
+    width: 200px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.tableFavor{
+    display: none;
 }

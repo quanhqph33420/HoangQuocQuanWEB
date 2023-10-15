@@ -54,6 +54,7 @@ function changeMenu() {
         menu.classList.toggle('responsive');
     });
 }
+
 changeMenu();
 function downtime(ele, h, m, s) {
     setInterval(() => {
@@ -79,28 +80,33 @@ function downtime(ele, h, m, s) {
         ele.innerHTML = `Phim sẽ chiếu sau: ${h}h: ${m}m: ${s}s`
     }, 1000);
 }
-const ColTopi = document.querySelectorAll(".main-content i")
+
 const ColTopImg = document.querySelectorAll(".main-content img")
 const ColTopH3 = document.querySelectorAll(".main-content h3")
 const ColTopP = document.querySelectorAll(".main-content p")
+const ColTopi = document.querySelectorAll(".main-content .fa-heart")
+const heart = document.getElementById("fa-regular")
+const tablefavor = document.getElementById("tableFavor")
+const tbl = document.getElementById('tbl')
 
 var arrPhim = []
-function phim(anhPhim, tenPhim, namSanXuat) {
+var listFavor = []
+function phim(stt, anhPhim, tenPhim, namSanXuat) {
+    this.stt = stt
     this.anhPhim = anhPhim
     this.tenPhim = tenPhim
     this.namSanXuat = namSanXuat
 }
 
-arrPhim.push(new phim("image/banAn.jpg", "BẢN ÁN", "Yargi (2021)"))
-arrPhim.push(new phim("image/gaHe.jpg", "GÃ HỀ", "Joker (2019)"))
-arrPhim.push(new phim("image/matTriNho.jpg", "MẤT TRÍ NHỚ", "Blackout (2022)"))
-arrPhim.push(new phim("image/matTich.jpg", "MẤT TÍCH", "Missing (2023)"))
+arrPhim.push(new phim(1, "image/banAn.jpg", "BẢN ÁN", "Yargi (2021)"))
+arrPhim.push(new phim(2, "image/gaHe.jpg", "GÃ HỀ", "Joker (2019)"))
+arrPhim.push(new phim(3, "image/matTriNho.jpg", "MẤT TRÍ NHỚ", "Blackout (2022)"))
+arrPhim.push(new phim(4, "image/matTich.jpg", "MẤT TÍCH", "Missing (2023)"))
 //-------------------------------------------------------------
-arrPhim.push(new phim("image/tromSach.jpg", "KẺ TRỘM SÁCH", "The Book Thief (2014)"))
-arrPhim.push(new phim("image/tang16.jpg", "TẦNG 16", "Level 16 (2018)"))
-arrPhim.push(new phim("image/PEARL.jpg", "PEARL", "Pearl (2022)"))
-arrPhim.push(new phim("image/blockBuster.jpg", "BLOCKBUSTER", "Blockbuster (2022)"))
-
+arrPhim.push(new phim(5, "image/tromSach.jpg", "KẺ TRỘM SÁCH", "The Book Thief (2014)"))
+arrPhim.push(new phim(6, "image/tang16.jpg", "TẦNG 16", "Level 16 (2018)"))
+arrPhim.push(new phim(7, "image/PEARL.jpg", "PEARL", "Pearl (2022)"))
+arrPhim.push(new phim(8, "image/blockBuster.jpg", "BLOCKBUSTER", "Blockbuster (2022)"))
 
 for (let index = 0; index < arrPhim.length; index++) {
     ColTopImg[index].src = arrPhim[index].anhPhim
@@ -108,17 +114,22 @@ for (let index = 0; index < arrPhim.length; index++) {
     ColTopP[index].innerHTML = arrPhim[index].namSanXuat
 }
 
+heart.addEventListener("click", () => {
+    tablefavor.classList.toggle('tableFavor')
+})
+
 for (let index = 0; index < ColTopi.length; index++) {
     ColTopi[index].addEventListener("click", () => {
         ColTopi[index].classList.toggle('fa-solid')
         ColTopi[index].classList.toggle('fa-regular')
         if (ColTopi[index].className.includes('fa-solid')) {
-            // alert(`Bạn đã thêm phim: ${arrPhim[index].tenPhim} vào danh sách yêu thích`)
             Swal.fire(
                 `${arrPhim[index].tenPhim}`,
                 'Bạn đã thêm vào danh sách yêu thích',
                 'success'
             )
+            listFavor.push(arrPhim[index])
+            loadTable(listFavor)
         } else {
             Swal.fire(
                 `${arrPhim[index].tenPhim}`,
@@ -128,3 +139,48 @@ for (let index = 0; index < ColTopi.length; index++) {
         }
     })
 }
+
+const iconhoverCol = document.querySelectorAll(".main-content #icon_hover_col1")
+const divtt = document.querySelectorAll('.main-content .div-tt')
+for (let i = 0; i < ColTopImg.length; i++) {
+    ColTopImg[i].addEventListener("mouseover", () => {
+        divtt[i].style.display = 'block'
+    })
+    ColTopImg[i].addEventListener("mouseleave", () => {
+        divtt[i].style.display = 'none'
+    })
+    divtt[i].addEventListener("mousemove", () => {
+        divtt[i].style.display = 'block'
+    })
+    divtt[i].addEventListener("mouseleave", () => {
+        divtt[i].style.display = 'none'
+    })
+
+}
+
+function loadTable(listPhim) {
+    const tableR = tbl.querySelectorAll('tr');
+
+    for (let index = tableR.length - 1; index > 0; index--) {
+        tbl.removeChild(tableR[index]);
+    }
+
+    listPhim.forEach(e => {
+        var tr = document.createElement('tr');
+        var td1 = document.createElement('td');
+        var td2 = document.createElement('td');
+
+        td1.textContent = e.tenPhim;
+        td2.textContent = e.namSanXuat;
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tbl.appendChild(tr);
+    });
+}
+
+
+
+
+
+
